@@ -58,6 +58,9 @@
 #endif
 #endif
 
+#include <casacore/tables/Dysco/dyscostman.h>
+using dyscostman::DyscoStMan;
+
 namespace casacore { //# NAMESPACE CASACORE - BEGIN
 
 DataManager::DataManager()
@@ -426,6 +429,7 @@ std::map<String,DataManagerCtor> DataManager::initRegisterMap()
   theirRegisterMap.insert (std::make_pair("Adios2StMan",      Adios2StMan::makeObject));
 #endif
 #endif
+  theirRegisterMap.insert (std::make_pair("DyscoStMan",       DyscoStMan::makeObject));
   theirRegisterMap.insert (std::make_pair(CompressFloat::className(),
                                           CompressFloat::makeObject));
   theirRegisterMap.insert (std::make_pair(CompressComplex::className(),
